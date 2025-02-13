@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useNavigate } from 'react-router-dom'
+
 function Presentation() {
 
     const CarData = [
@@ -32,6 +34,11 @@ function Presentation() {
         { link: "Group 10.png" },
         { link: "Group 11.png" }
     ]
+    const navigate = useNavigate();
+
+    const handleClick = ()=>(
+        navigate('Explore all')
+    )
     return (
         <section className='bg-gray-50'>
 
@@ -71,7 +78,7 @@ function Presentation() {
 
                     <p className='text-gray-400 max-w-md mx-auto lg:mx-0  text-sm md:text-base'> Best software platform for running an internet business. We build the most powerful and flexible tools for internet commerce.</p>
 
-                    <button className="bg-indigo-100 text-[#5F62E2] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+                    <button onClick={handleClick} className="bg-indigo-100  text-[#5F62E2] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
                         Explore all
                     </button>
 

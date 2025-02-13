@@ -1,7 +1,14 @@
 import React from 'react'
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { useNavigate } from 'react-router-dom';
 function TimeWork() {
+
+  const navigate = useNavigate();
+
+  const handleClick = ()=>(
+      navigate(' Learn more')
+  )
   return (
     <section className='md:gap-24  md:mt-20 py-6 px-6 lg:px-16 max-w-[1400px] mx-auto'>
  {/* section 1 */}
@@ -22,7 +29,7 @@ function TimeWork() {
                 <p className='text-black  mt-4 md:mt-0'><CheckCircleOutlineIcon className='text-green-600 me-2 '/>Many ways to use illustrations in design</p>
                 <p><CheckCircleOutlineIcon className='text-green-600 me-2 '/>Simply explained with illustrations</p>
                 <p><CheckCircleOutlineIcon className='text-green-600 me-2'/>Make more time for the work</p>
-                <button className="bg-[#5f62e2] hover:text-white  hover:bg-blue-300 mt-4 md:mt-0 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+                <button onClick={handleClick} className="bg-[#5f62e2] hover:text-white  hover:bg-blue-300 mt-4 md:mt-0 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
             Learn more<ArrowForwardIcon className='ms-4'/>
           </button>
 
@@ -48,7 +55,7 @@ function TimeWork() {
     <p className='text-black mt-4 md:mt-0'><CheckCircleOutlineIcon className='text-green-600 me-2 '/>Many ways to use illustrations in design</p>
     <p><CheckCircleOutlineIcon className='text-green-600 me-2 '/>Simply explained with illustrations</p>
     <p><CheckCircleOutlineIcon className='text-green-600 me-2'/>Make more time for the work</p>
-    <button className="bg-[#E7E7FB] hover:text-white  hover:bg-blue-300 mt-4 md:mt-0 text-[#5F62E2] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
+    <button onClick={handleClick} className="bg-[#E7E7FB] hover:text-white  hover:bg-blue-300 mt-4 md:mt-0 text-[#5F62E2] font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300">
 Learn more<ArrowForwardIcon className='ms-4'/>
 </button>
 

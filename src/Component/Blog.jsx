@@ -1,8 +1,13 @@
 import React from 'react'
 import { Button } from '@mui/material'
-
+import { useNavigate } from 'react-router-dom';
 function Blog() {
 
+    const navigate = useNavigate();
+
+    const handleClick = ()=>(
+        navigate(' Learn more')
+    )
     const CardData = [
         {
             id: 1,
@@ -43,8 +48,8 @@ function Blog() {
                         <p className='max-w-lg text-[22px] mt-3 text-gray-500'>There are a lot of different components that will help you create the perfect look for your project</p>
                     </div>
 
-                    <div className="sm:mt-16 md:mt-20" >
-                        <Button sx={{ backgroundColor: '#E7E7FB', color: '#5F62E2', '&:hover': { backgroundColor: '#D6D6F5' } }}
+                    <div className="mt-8 md:mt-20" >
+                        <Button onClick={handleClick} sx={{ backgroundColor: '#E7E7FB', color: '#5F62E2', '&:hover': { backgroundColor: '#D6D6F5' } }}
                             variant='contained'  >Explore All</Button>
 
                     </div>
@@ -55,7 +60,7 @@ function Blog() {
                 {/* botom */}
                 <div className='grid grid-cols lg:grid-cols-3 gap-8 !p-5'>
                     {CardData.map((card) => (
-                        <div key={card.id} className='drop-shadow-2xl rounded-xl overflow-hidden hover:shadow-xl transition duration-300'>
+                        <div key={card.id} className='drop-shadow-2xl  rounded-xl overflow-hidden hover:shadow-xl transition duration-300'>
                             <div className='bg-gray-100 justify-center items-center flex  rounded- py-3'>
                                 <img src={card.ImgSrc} alt="" />
                             </div>
